@@ -11,7 +11,20 @@ Utilice el archivo `data.csv` para resolver las preguntas.
 
 
 """
+import csv
+dic = dict()
+dic_b = dic.copy()
+dic_b = {}
+dic_b["A"]= 0
+dic_b["B"]= 0
+dic_b["C"]= 0
+dic_b["D"]= 0
+dic_b["E"]= 0
 
+with open("/content/programacion-en-python-NordeyPR/data.csv", "r",) as file:
+   Lab_1 = csv.reader(file,delimiter = "\t")
+   lista = list(Lab_1)
+   lista.sort()
 
 def pregunta_01():
     """
@@ -21,7 +34,11 @@ def pregunta_01():
     214
 
     """
-    return
+    suma = 0  
+    for linea in lista:
+      suma += int(linea[1])
+    return suma
+
 
 
 def pregunta_02():
@@ -39,7 +56,16 @@ def pregunta_02():
     ]
 
     """
-    return
+    for linea in lista:
+        if linea[0] in dic:
+       
+            dic[linea[0]] += 1
+        else:
+            dic[linea[0]] = 1
+
+
+    return dic.items()
+    
 
 
 def pregunta_03():
@@ -57,7 +83,21 @@ def pregunta_03():
     ]
 
     """
-    return
+    for linea in lista:
+        sum_letra = linea[1]
+        if linea[0] == "A":
+            dic_b["A"] += int(sum_letra)
+        if linea[0] == "B":
+            dic_b["B"] += int(sum_letra)
+        if linea[0] == "C":
+            dic_b["C"] += int(sum_letra)
+        if linea[0] == "D":
+            dic_b["D"] += int(sum_letra)
+        if linea[0] == "E":
+            dic_b["E"] += int(sum_letra)
+
+    return dic_b.items() 
+   
 
 
 def pregunta_04():
