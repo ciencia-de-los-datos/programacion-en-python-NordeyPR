@@ -57,14 +57,16 @@ def pregunta_02():
 
     """
     for linea in lista:
+       
         if linea[0] in dic:
        
-            dic[linea[0]] += 1
+            dic[linea[0]] += 1              
         else:
             dic[linea[0]] = 1
+        letras_c = list(dic.items())
 
 
-    return dic.items()
+    return letras_c
     
 
 
@@ -95,8 +97,8 @@ def pregunta_03():
             dic_b["D"] += int(sum_letra)
         if linea[0] == "E":
             dic_b["E"] += int(sum_letra)
-
-    return dic_b.items() 
+        letras_num = list(dic_b.items() )
+    return letras_num
    
 
 
