@@ -21,7 +21,7 @@ dic_b["C"]= 0
 dic_b["D"]= 0
 dic_b["E"]= 0
 
-with open("/content/programacion-en-python-NordeyPR/data.csv", "r",) as file:
+with open("data.csv", "r",) as file:
    Lab_1 = csv.reader(file,delimiter = "\t")
    lista = list(Lab_1)
    lista.sort()
