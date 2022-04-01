@@ -124,7 +124,14 @@ def pregunta_04():
     ]
 
     """
-    return
+    from collections import Counter
+    mes = [linea[2].split("-")[1] for linea in lista]
+    mes_num = Counter(mes).most_common(12)
+    mes_num.sort()
+
+    return mes_num
+
+  
 
 
 def pregunta_05():
@@ -142,7 +149,24 @@ def pregunta_05():
     ]
 
     """
-    return
+    letras_A_max = max([(linea[0:2]) for linea in lista if linea[0] == "A"])
+    letras_A_min = min([(linea[0:2]) for linea in lista if linea[0] == "A"])
+    letras_B_max = max([(linea[0:2]) for linea in lista if linea[0] == "B"])
+    letras_B_min = min([(linea[0:2]) for linea in lista if linea[0] == "B"])
+    letras_C_max = max([(linea[0:2]) for linea in lista if linea[0] == "C"])
+    letras_C_min = min([(linea[0:2]) for linea in lista if linea[0] == "C"])
+    letras_D_max = max([(linea[0:2]) for linea in lista if linea[0] == "D"])
+    letras_D_min = min([(linea[0:2]) for linea in lista if linea[0] == "D"])
+    letras_E_max = max([(linea[0:2]) for linea in lista if linea[0] == "E"])
+    letras_E_min = min([(linea[0:2]) for linea in lista if linea[0] == "E"])
+    letrA = letras_A_max[0] , int(letras_A_max[1]) , int(letras_A_min[1])
+    letrB = letras_B_max[0] , int(letras_B_max[1]) , int(letras_B_min[1])
+    letrC = letras_C_max[0] , int(letras_C_max[1]) , int(letras_C_min[1])
+    letrD = letras_D_max[0] , int(letras_D_max[1]) , int(letras_D_min[1])
+    letrE = letras_E_max[0] , int(letras_E_max[1]) , int(letras_E_min[1])
+    Conjunto = [letrA , letrB , letrC , letrD , letrE]
+    
+    return Conjunto
 
 
 def pregunta_06():
