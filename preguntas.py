@@ -24,7 +24,7 @@ dic_b["E"]= 0
 with open("data.csv", "r",) as file:
    Lab_1 = csv.reader(file,delimiter = "\t")
    lista = list(Lab_1)
-   lista.sort()
+   #lista.sort()
 
 def pregunta_01():
     """
@@ -66,7 +66,7 @@ def pregunta_02():
         letras_c = list(dic.items())
 
 
-    return letras_c
+    return sorted(letras_c)
     
 
 
@@ -191,7 +191,69 @@ def pregunta_06():
     ]
 
     """
-    return
+    "separo y extraigo linea por linea su item de clave y valor"
+    pr_1 = [linea[4].split(",") for linea in lista]
+    union_0 = (pr_1[0]) 
+    union_1 = (pr_1[1]) 
+    union_2 = (pr_1[2]) 
+    union_3 = (pr_1[3])
+    union_4 = (pr_1[4]) 
+    union_5 = (pr_1[5]) 
+    union_6 = (pr_1[6]) 
+    union_7 = (pr_1[7]) 
+    union_8 = (pr_1[8]) 
+    union_9 = (pr_1[9]) 
+    union_10 = (pr_1[10]) 
+    union_11 = (pr_1[11])
+    union_12 = (pr_1[12]) 
+    union_13 = (pr_1[13])
+    union_14 = (pr_1[14]) 
+    union_15 = (pr_1[15])
+    union_16 = (pr_1[16]) 
+    union_17 = (pr_1[17])
+    union_18 = (pr_1[18]) 
+    union_19 = (pr_1[19])
+    union_20 = (pr_1[20]) 
+    union_21 = (pr_1[21]) 
+    union_22 = (pr_1[22]) 
+    union_23 = (pr_1[23])
+    union_24 = (pr_1[24]) 
+    union_25 = (pr_1[25])
+    union_26 = (pr_1[26]) 
+    union_27 = (pr_1[27]) 
+    union_28 = (pr_1[28]) 
+    union_29 = (pr_1[29])
+    union_30 = (pr_1[30]) 
+    union_31 = (pr_1[31]) 
+    union_32 = (pr_1[32]) 
+    union_33 = (pr_1[33]) 
+    union_34 = (pr_1[34]) 
+    union_35 = (pr_1[35])
+    union_36 = (pr_1[36]) 
+    union_37 = (pr_1[37])
+    union_38 = (pr_1[38]) 
+    union_39 = (pr_1[39])
+    "uno valores de cada linea para poder separar por clave y valor"
+    u = (union_0 + union_1 + union_2 + union_3 + union_4 + union_5 + union_6 + union_7 + union_8 + union_9
+        + union_10 + union_11 + union_12 + union_13 + union_14 + union_15 + union_16 + union_17 + union_18 + union_19
+        + union_20 + union_21 + union_22 + union_23 + union_24 + union_25 + union_26 + union_27 + union_28 + union_29
+        + union_30 + union_31 + union_32 + union_33 + union_34 + union_35 + union_36 + union_37 + union_38 + union_39)
+    "separo la clave del valor"
+    uz = [u[0:].split(":") for u in u]
+    "corro for para sacar minimos y maximos"
+    
+    result = {}
+    for k , v in uz:
+        v = int(v)
+        if k in result.keys():
+            result[k].append(v)
+        else:
+            result[k] = [v]
+
+    result = sorted([(k, min(v) , max(v)) for k, v in result.items()])
+
+       
+    return result
 
 
 def pregunta_07():
@@ -215,7 +277,31 @@ def pregunta_07():
     ]
 
     """
-    return
+    pr_7_0 = [linea[0] for linea in lista if linea[1] == "0"]
+    pr_7_1 = [linea[0] for linea in lista if linea[1] == "1"]
+    pr_7_2 = [linea[0] for linea in lista if linea[1] == "2"]
+    pr_7_3 = [linea[0] for linea in lista if linea[1] == "3"]
+    pr_7_4 = [linea[0] for linea in lista if linea[1] == "4"]
+    pr_7_5 = [linea[0] for linea in lista if linea[1] == "5"]
+    pr_7_6 = [linea[0] for linea in lista if linea[1] == "6"]
+    pr_7_7 = [linea[0] for linea in lista if linea[1] == "7"]
+    pr_7_8 = [linea[0] for linea in lista if linea[1] == "8"]
+    pr_7_9 = [linea[0] for linea in lista if linea[1] == "9"]
+    lin_0 = 0 , pr_7_0
+    lin_1 = 1 , pr_7_1
+    lin_2 = 2 , pr_7_2
+    lin_3 = 3 , pr_7_3
+    lin_4 = 4 , pr_7_4
+    lin_5 = 5 , pr_7_5
+    lin_6 = 6 , pr_7_6
+    lin_7 = 7 , pr_7_7
+    lin_8 = 8 , pr_7_8
+    lin_9 = 9 , pr_7_9
+
+    pr_7 = dict()
+    pr_7 = [lin_0 , lin_1 , lin_2 ,lin_3 , lin_4 , lin_5 , lin_6 , lin_7 , lin_8 , lin_9]
+    
+    return pr_7
 
 
 def pregunta_08():
